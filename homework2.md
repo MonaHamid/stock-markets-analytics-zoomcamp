@@ -3,7 +3,7 @@
 | # | Question (multiple‑choice context) | Selected Answer |
 |---|-----------------------------------|-----------------|
 | **1** | What is the total withdrawn IPO value (in $ millions) for the company class with the highest total withdrawal value? | **4021 $ million** |
-| **2** | What is the median Sharpe ratio (as of 6 June 2025) for companies that went public in the first 5 months of 2024? | **0.03** |
+| **2** | What is the median Sharpe ratio (as of 6 June 2025) for companies that went public in the first 5 months of 2024? | **0.08** |
 | **3** | What is the optimal number of months (1 to 12) to hold a newly IPO'd stock in order to maximize average growth? | **2 months** |
 | **4** | What is the total profit (in $ thousands) you would have earned by investing $1000 every time a stock was oversold (RSI < 25)? | **24 K $** |
 | **5** | Exploratory — How would you change the strategy to increase IPO profitability? | See brainstorming ideas below |

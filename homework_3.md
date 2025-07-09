@@ -35,7 +35,7 @@ Below are my answers for the 2025 LLM Zoomcamp **Module 3 homework**. Each sec
 
 *How many TEST rows are correct **only** for the depth‑10 Decision Tree while all manual rules fail?*
 
-**Answer → `<fill‑in>`**
+**Answer → `3770`**
 
 > • Trained depth‑10 tree (`random_state = 42`).  
 > • Added `pred5_clf_10` column.  
@@ -63,13 +63,16 @@ Depth 5 strikes the best bias‑variance balance and beats the 0.58 benchmark.
 
 ## [Exploratory] Question 5 – What data is missing?
 
-1. **Volatility / risk gauge** → Add VIX or MOVE → captures regime shifts.  
-2. **FX rates** → USD index, EURUSD, INRUSD → impacts multinational earnings.  
-3. **Commodity prices** → WTI, Brent, Copper → margin‑sensitive megacaps.  
-4. **Forward‑looking sentiment** → PMI, OECD LEI → market anticipates cycle turns.
+Question 5 – Alternative approach
+Replace the single decision-tree with a gradient-boosted tree ensemble (e.g. XGBoost or LightGBM):
 
-*Alternative approach:* switch from single tree to gradient‑boosted ensemble (XGBoost) with SHAP for interpretability; tends to gain 5‑15 ppt precision without extra features.
+Why it helps — Boosting aggregates many shallow trees, capturing non-linear interactions automatically. In tabular equity data this typically lifts precision by 5–15 ppt versus a single CART without extra manual feature engineering.
 
+Time-series cross-validation — Use a rolling-window split so every fold tests on data strictly after the train window, eliminating look-ahead bias. Tune hyper-parameters with Bayesian optimisation (Optuna) across depth, learning-rate, subsample, etc.
+
+Interpretability preserved — Explain the ensemble with SHAP values; global importance plots and per-row force plots keep the model as transparent as the current tree diagram while capturing richer interactions.
+
+Swapping to XGBoost +  SHAP maintains transparency but materially improves out-of-sample precision.
 ---
 
 **End of Homework 3 answer sheet**
